@@ -5,9 +5,10 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   </head>
   <body ng-app="directoryApp">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <h1>UF Directory App</h1>
       </div>
@@ -42,8 +43,10 @@
                 </td>
                 <td>
                   <div class="btn" ng-click="showDetails(list)">{{list.name}}</div>
-                  <img src="close_delete-128.png" class="btn" ng-click="deleteListing(list)"
-                    width = "40" height="30">
+                  <!-- <img class="glyphicon glyphicon-search" class="btn" ng-click="deleteListing(list)"
+                    width = "40" height="30"> -->
+                    <span class="glyphicon glyphicon-trash" class="btn" ng-click="deleteListing(list)"
+                      style="cursor:pointer;"></span>
                 </td>
               </tr>
             </table>
@@ -56,9 +59,9 @@
 
           <h2>Create a new listing:</h2>
           <p>Code:      </p><input ng-model="listing.code"></input> <br>
-          <p>Name:      </p><input ng-model="listing.name"></input> <br>
-          <p>Latitude:  </p><input ng-model="listing.coordinates.latitude"></input> <br>
-          <p>Longitude: </p><input ng-model="listing.coordinates.longitude"></input> <br>
+          <p>Name:      </p><input ng-model="listing.name" placeholder=></input> <br>
+          <p>Latitude:  </p><input ng-model="listing.coordinates.latitude" placeholder=""></input> <br>
+          <p>Longitude: </p><input ng-model="listing.coordinates.longitude" placeholder=""></input> <br>
           <p>Address:   </p><input ng-model="listing.address"></input> <br>
           <input type="submit" ng-click = "addListing()" value = "Submit"></input><br> 
 

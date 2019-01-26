@@ -24,7 +24,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       name: "",
       coordinates: {
         latitude: 0,
-        longitude: 0,
+        longitude: 0
       },
       address: ""
     };
@@ -35,6 +35,15 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
      */
     $scope.addListing = function() {
       $scope.listingsList.push($scope.listing);
+      $scope.listing = {
+        code: "",
+        name: "",
+        coordinates: {
+          latitude: 0,
+          longitude: 0
+        },
+        address: ""
+      };
     };
     $scope.deleteListing = function(index) {
       var numericalIndex = $scope.listingsList.indexOf(index);
