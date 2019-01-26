@@ -1,0 +1,6 @@
+Functions that we'll be using in this function:
+
+ng-if 
+ng-repeat
+ng-click
+	$scope 

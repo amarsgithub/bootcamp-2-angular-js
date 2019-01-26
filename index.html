@@ -34,6 +34,17 @@
                       * include a way to remove individual listings
 
                 --> 
+              <tr ng-repeat="list in listingsList"> {{list}} 
+                <td>
+                  <div class="btn" ng-click="showDetails(list)">{{list.code}}</div>
+                </td>
+                <td>
+                  <div class="btn" ng-click="showDetails(list)">{{list.name}}</div>
+                </td>
+                <td>
+                  <div class="btn" ng-click="deleteListing(list)">Delete</div>
+                </td>
+              </tr>
             </table>
           </div>
           <!-- 
@@ -41,6 +52,15 @@
               Write an HTML form that adds new listings to the directory 
 
             -->
+
+          <h2>Create a new listing:</h2>
+          <p>Code:      </p><input ng-model="listing.code"></input> <br>
+          <p>Name:      </p><input ng-model="listing.name"></input> <br>
+          <p>Latitude:  </p><input ng-model="listing.coordinates.latitude"></input> <br>
+          <p>Longitude: </p><input ng-model="listing.coordinates.longitude"></input> <br>
+          <p>Address:   </p><input ng-model="listing.address"></input> <br>
+          <input type="submit" ng-click = "addListing()" value = "Submit"></input><br> 
+
         </div>
         <div class="col-md-6">
           <div class="jumbotron">
@@ -51,6 +71,12 @@
                    * consider how to use ng-click within the the table to implement this feature
 
              -->
+          <p>Code:      <div ng-model="detailedListing">{{detailedListing.code}}</div> <br>
+          <p>Name:      <div ng-model="detailedListing">{{detailedListing.name}}</div> <br>
+          <p>Latitude:  <div ng-model="detailedListing">{{detailedListing.coordinates.latitude}}</div> <br>
+          <p>Longitude: <div ng-model="detailedListing">{{detailedListing.coordinates.longitude}}</div> <br>
+          <p>Address:   <div ng-model="detailedListing">{{detailedListing.address}}</div> <br>
+
           </div>
         </div>
       </div>
