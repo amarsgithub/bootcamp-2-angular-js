@@ -1,3 +1,5 @@
+<!-- https://github.com/UF-CEN3031-Spr2019/bootcamp-2-angular-js-amarsgithub -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,7 +20,7 @@
 
               -->
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search", ng-model="searchBox">
           </div>
           <div class="tableWrapper">
             <table class="table table-striped table-hover">
@@ -34,15 +36,14 @@
                       * include a way to remove individual listings
 
                 --> 
-              <tr ng-repeat="list in listingsList"> {{list}} 
+              <tr ng-repeat="list in listingsList | filter:searchBox"> {{list}} 
                 <td>
                   <div class="btn" ng-click="showDetails(list)">{{list.code}}</div>
                 </td>
                 <td>
                   <div class="btn" ng-click="showDetails(list)">{{list.name}}</div>
-                </td>
-                <td>
-                  <div class="btn" ng-click="deleteListing(list)">Delete</div>
+                  <img src="close_delete-128.png" class="btn" ng-click="deleteListing(list)"
+                    width = "40" height="30">
                 </td>
               </tr>
             </table>
